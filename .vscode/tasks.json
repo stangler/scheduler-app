@@ -1,0 +1,107 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // ── ビルド ──────────────────────────────────────────────
+    {
+      "label": "🔨 Build (Debug)",
+      "type": "shell",
+      "command": "dotnet build -c Debug",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🚀 Build (Release)",
+      "type": "shell",
+      "command": "dotnet build -c Release",
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    // ── テスト ──────────────────────────────────────────────
+    {
+      "label": "🧪 Run Tests",
+      "type": "shell",
+      "command": "dotnet test --verbosity normal",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    // ── 発行 ──────────────────────────────────────────────
+    {
+      "label": "📦 Publish (win-x64, Single File)",
+      "type": "shell",
+      "command": "dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ./publish",
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    // ── コードフォーマット ────────────────────────────────
+    {
+      "label": "✨ Format Code (CSharpier)",
+      "type": "shell",
+      "command": "dotnet csharpier .",
+      "group": "none",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "✨ Format Code (dotnet-format)",
+      "type": "shell",
+      "command": "dotnet format",
+      "group": "none",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    // ── クリーン ──────────────────────────────────────────
+    {
+      "label": "🧹 Clean",
+      "type": "shell",
+      "command": "dotnet clean",
+      "group": "none",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    // ── NuGet復元 ────────────────────────────────────────
+    {
+      "label": "📥 Restore NuGet Packages",
+      "type": "shell",
+      "command": "dotnet restore",
+      "group": "none",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

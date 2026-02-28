@@ -1,0 +1,57 @@
+## .NET / C# / WPF
+
+# ビルド成果物
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+publish/
+
+# Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sdf
+*.opensdf
+*.VC.VC.opendb
+*.VC.db
+
+# Visual Studio Code
+.vscode/settings.json
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider
+.idea/
+*.sln.iml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ユーザー固有データ
+*.rsuser
+.localhistory/
+
+# テスト結果
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+
+# Entity Framework
+*.mdf
+*.ldf
+*.ndf
